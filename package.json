@@ -1,0 +1,28 @@
+{
+  "name": "recipeapp",
+  "version": "1.0.0",
+  "description": "\"Recipe app which contains many variety and tasty dishes recipes\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev":"nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yogalakshmidev/BackendRecipeApp.git"
+  },
+  "author": "Yogalakshmi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yogalakshmidev/BackendRecipeApp/issues"
+  },
+  "homepage": "https://github.com/yogalakshmidev/BackendRecipeApp#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "mongoose": "^8.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
