@@ -3,6 +3,8 @@ const express = require('express');
 // to import
 const recipesRouter = require('./routes/recipeRoutes');
 const authRouter = require('./routes/authRoutes');
+const adminRouter=require('./routes/adminRoutes');
+
 const cookieParser = require('cookie-parser');
 
 // to create app in express
@@ -17,5 +19,6 @@ app.use(cookieParser());
 // use is used and in this we give prefix for the url
 app.use('/recipes', recipesRouter);
 app.use('/auth', authRouter);
+app.use('/admin',adminRouter);
 // to export`
 module.exports = app;
