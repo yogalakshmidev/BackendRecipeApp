@@ -12,10 +12,21 @@ const recipeSchema = new mongoose.Schema({
   Content: {
     type: String,
   },
+  Author:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'User'
+  },
+  Likes:[{
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'User'
+  }],
 
   CreatedAt: {
     type: Date,
     default: Date.now,
+  },
+  updatedAt: {
+      type: Date
   }
 });
 
