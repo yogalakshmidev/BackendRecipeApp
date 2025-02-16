@@ -7,10 +7,10 @@ const auth = {
   isAuthenticated: async (req, res, next) => {
     // to check whether it has token and then check it is valid token
     // get the token from the cookies for httponly method
-// { const token = req.cookies.token;}
+       const token = req.cookies.token;
 
-    // to get token from the authorization header
-    const token = req.headers.authorization.split(' ')[1];
+    // to get token from the authorization header for bearer scheme
+    // const token = req.headers.authorization.split(' ')[1];
 
     // console.log(token);
     // send an error if the token is not present

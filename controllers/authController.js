@@ -62,16 +62,19 @@ const authController = {
       const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
 
       // For http only method:
-      // Set the token in the cookies
-      // res.cookie("token", token, {
-      //   httpOnly: true,
-      //   sameSite: "strict",
-      //   maxAge: 24 * 60 * 60 * 1000,
-      //   secure: true,
-      // });
-      
+      // Set the token in the cookies(maxAge:3600000)
+      res.cookie("token", token, {
+        httpOnly: true,
+        sameSite: "strict",
+        maxAge: 24 * 60 * 60 * 1000,
+        secure: true,
+      });
+
       //  return a success message
-      res.status(200).json({ message: "Userlogged in successfully", token });
+      // for http only:
+      res.status(200).json({ message: "Userlogged in successfully"});
+      // for bearer scheme
+      // res.status(200).json({ message: "Userlogged in successfully", token });
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
