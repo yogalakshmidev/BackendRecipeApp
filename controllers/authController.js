@@ -88,6 +88,7 @@ const authController = {
   },
   me: async (req, res) => {
     try {
+      // using HttpCookies Only
       // get the user ID from the request object
       const userId= req.userId;
 
