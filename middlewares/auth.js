@@ -6,8 +6,13 @@ const auth = {
   // middleware to check if the user is authenticated
   isAuthenticated: async (req, res, next) => {
     // to check whether it has token and then check it is valid token
-    // get the token from the cookies
-    const token = req.cookies.token;
+    // get the token from the cookies for httponly method
+// { const token = req.cookies.token;}
+
+    // to get token from the authorization header
+    const token = req.headers.authorization.split(' ')[1];
+
+    // console.log(token);
     // send an error if the token is not present
     if(!token){
       return res.status(500).json({message:'Unauthorized'});

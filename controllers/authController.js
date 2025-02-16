@@ -63,12 +63,13 @@ const authController = {
 
       // For http only method:
       // Set the token in the cookies
-      res.cookie("token", token, {
-        httpOnly: true,
-        sameSite: "strict",
-        maxAge: 24 * 60 * 60 * 1000,
-        secure: true,
-      });
+      // res.cookie("token", token, {
+      //   httpOnly: true,
+      //   sameSite: "strict",
+      //   maxAge: 24 * 60 * 60 * 1000,
+      //   secure: true,
+      // });
+      
       //  return a success message
       res.status(200).json({ message: "Userlogged in successfully", token });
     } catch (error) {
