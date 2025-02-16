@@ -12,7 +12,8 @@ const recipeController = {
         Title,
         Ingredients,
         Content,
-      });
+        Author:req.userId 
+      })
 
       // Save the post in the database
       await newRecipe.save();
