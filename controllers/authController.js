@@ -1,6 +1,6 @@
 // import user model
 const User = require("../models/user");
-
+const sendMail = require('../utils/sendMail');
 // to hide password use bcrypt
 const bcrypt = require("bcrypt");
 
@@ -33,8 +33,14 @@ const authController = {
       // save the user to the database
       await newUser.save();
 
+      
+      // send a welcome email
+      sendMail(email,"Welcome to our Website Recipe App","We are glad to have you on board");
+
       // return a success message
       res.status(201).json({ message: "User Registered Successfully" });
+
+      
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
@@ -75,6 +81,7 @@ const authController = {
       res.status(200).json({ message: "Userlogged in successfully"});
       // for bearer scheme
       // res.status(200).json({ message: "Userlogged in successfully", token });
+
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
